@@ -16,3 +16,6 @@ profiles.clj
 /.env
 .nrepl-port
 .cpcache/
+/log/
+*.db
+
