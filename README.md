@@ -5,8 +5,6 @@ Immediately start using a Clojure server that is already integrated with a React
 
 generated using Luminus version "4.35"
 
-FIXME
-
 ## Prerequisites
 
 You will need [Leiningen][1] 2.0 or above installed.
