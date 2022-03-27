@@ -18,16 +18,22 @@
 (mount/defstate app-routes
   :start
   (ring/ring-handler
+
     (ring/router
       [(home-routes)
        (service-routes)])
+
     (ring/routes
+      (ring/create-resource-handler
+        {:path "/myclient"
+         :root "publicmyclient"})
       (swagger-ui/create-swagger-ui-handler
         {:path   "/swagger-ui"
          :url    "/api/swagger.json"
          :config {:validator-url nil}})
       (ring/create-resource-handler
-        {:path "/"})
+        {:path "/"
+         :root "public"})
       (wrap-content-type
         (wrap-webjars (constantly nil)))
       (ring/create-default-handler
